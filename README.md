@@ -1,6 +1,6 @@
 # Prismatic.io to CircleCI webhook
 
-As the prismatic.io webhook cannot send data only secret we need a tool to change branches.
+As the prismic.io webhook cannot send data only secret we need a tool to change branches.
 
 
 ## TO INSTALL
@@ -15,5 +15,5 @@ As the prismatic.io webhook cannot send data only secret we need a tool to chang
 - Add correct CircleCI url into env.yml (See https://circleci.com/docs/api/v1-reference/)
 - Create a secret string and copy it to env.yml as secret_token
 - serverless deploy
-- Add api endpoint to prismatic.io webhook
-- Add secret_token to prismatic.io webhook
+- Add api endpoint to prismic.io webhook
+- Add secret_token to prismic.io webhook
