@@ -1,4 +1,4 @@
-# Prismatic.io to CirceCI webhook
+# Prismatic.io to CircleCI webhook
 
 As the prismatic.io webhook cannot send data only secret we need a tool to change branches.
 
