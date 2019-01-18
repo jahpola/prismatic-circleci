@@ -1,0 +1,30 @@
+# Welcome to Serverless!
+#
+
+service: prismatic-circleci # NOTE: update this with your service name
+
+custom:
+  stage: ${opt:stage, self:provider.stage}
+  environment: ${file(env.yml):${self:custom.stage}}
+
+provider:
+  name: aws
+  runtime: python3.6
+  memorySize: 128
+  profile: jahp-serverless # Change this
+  region: eu-north-1 # Change this
+  environment:
+    circleci_url: ${self:custom.environment.circleci_url}
+    api_token: ${self:custom.environment.api_token}
+    secret_token: ${self:custom.environment.secret_token}
+
+
+functions:
+  circleci:
+    handler: handler.circleci
+    events:
+     - http: POST circleci
+
+plugins:
+  - serverless-offline
+  - serverless-python-requirements
